@@ -1,0 +1,282 @@
+@font-face {
+  font-family: 'Anton';
+  src: url('fonts/Anton-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-family: 'Anton', sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+/* Header */
+header {
+  background: #0b1c33;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+header nav a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 100px;
+  color:#ff6600;
+}
+
+.hero p {
+line-height: 1.5;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  border: 2px solid #0b1c33;
+  background: white;
+  color: #0b1c33;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 100%;
+  background: #ff6600;
+  z-index: 0; 
+  transition: right 0.3s ease;
+}
+
+.btn:hover::before {
+  right: 0; 
+}
+
+.btn span {
+  position: relative; 
+  z-index: 1;         
+  transition: color 0.3s ease;
+}
+
+.btn:hover span {
+  color: white; 
+}
+
+
+/* Projekte */
+.projects, .projects-page {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.projects h2, .projects-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: left;
+}
+
+.card img {
+  width: 100%;       
+  height: 200px;      
+  object-fit: cover;  
+  object-position: top; 
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card_detail {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: left;
+}
+
+.card_detail img {
+  width: 100%;       
+  height: 200px;      
+  object-fit: cover;  
+  object-position: top; 
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card_detail:hover {
+background: #e0e0e0;
+}
+
+.about {
+  padding: 3rem 2rem;    
+}
+
+.about h1 {
+  text-align: center;    
+  margin-bottom: 3rem;     
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: flex-start; 
+  gap: 2rem; 
+  flex-wrap: wrap; 
+}
+
+.profile-img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px; 
+  object-fit: cover;
+}
+
+.about-content {
+  flex: 1; 
+}
+
+.about-header h3 {
+  margin: 0;
+  display: inline-block;
+  transform-origin: bottom;        
+  transition: transform 0.15s ease; 
+  color: #0b1c33;
+}
+
+.about-header:hover h3 {
+  transform: scaleY(2);
+  color: #ff6600; 
+}
+
+.about-content p {
+  margin-bottom: 1rem;     
+}
+
+footer {
+  background: #0b1c33;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+footer .logo {
+  height: 40px;
+  width: auto;
+}
+
+footer nav a {
+  color: white;
+  margin-left: 1.5rem;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  header, footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header nav, footer nav {
+    margin: 0.5rem 0;
+  }
+
+  .about-wrapper {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 180px;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}
